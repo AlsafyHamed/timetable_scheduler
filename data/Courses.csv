@@ -1,0 +1,162 @@
+CourseID,CourseName,Credits,Lecture,Lab,Lab_Type
+ACM215,Ordinary Differential Equations,3,1,1,Classroom
+ACM323,Applied Numerical Methods,3,1,1,Classroom
+ACM422,Operations Research,3,1,1,Classroom
+AID111,Data Science,3,1,1,Classroom
+AID221,Introduction to Artificial Intelligence,3,1,1,Classroom
+AID311,Mathematics of Data Science,3,1,1,Classroom
+AID312,Intelligent Systems,3,1,1,Classroom
+AID321,Machine Learning,3,1,1,Classroom
+AID322,Data Mining,3,1,1,Classroom
+AID323,Parallel & Distributed Computing,3,1,1,Classroom
+AID324,Image Processing,3,1,1,Classroom
+AID325,BlockChain & Distributed Ledgers,3,1,1,Classroom
+AID326,Data Science in Business,3,1,1,Classroom
+AID327,Human Computer Interface,3,1,1,Classroom
+AID328,Game Theory,3,1,1,Classroom
+AID411,BIG Data Analytics & Visualization,3,1,1,Classroom
+AID412,Introduction to Neural network,3,1,1,Classroom
+AID413,Data Security,3,1,1,Classroom
+AID414,Graduation Project (1),2,2,0,Classroom
+AID416,Reinforcement Learning,3,1,1,Classroom
+AID417,Advanced Data Mining,3,1,1,Classroom
+AID421,Computer Vision,3,1,1,Classroom
+AID422,Natural Language Processing,3,1,1,Classroom
+AID423,Field Training (2 Modules),5,0,2,Classroom
+AID424,Graduation Project (2),4,2,0,Classroom
+AID425,AI in Bio-Computing,3,1,1,Classroom
+AID426,Robotics,3,1,1,Classroom
+AID427,New Trends in Data Science,3,1,1,Classroom
+AID428,New Trends in AI,3,1,1,Classroom
+BIF311,Human Biology,3,1,1,Classroom
+BIF312,HealthCare Information Systems,3,1,1,Classroom
+BIF321,Bioinformatics,3,1,1,Classroom
+BIF322,Computational Biology,3,1,1,Classroom
+BIF323,Bio-computing,3,1,1,Classroom
+BIF324,Biochemistry,3,1,1,Classroom
+BIF325,Molecular and Cell Biology,3,1,1,Classroom
+BIF326,Genetics,3,1,1,Classroom
+BIF327,Neural Networks,3,1,1,Classroom
+BIF328,Genetic Algorithms,3,1,1,Classroom
+BIF329,Biophysics,3,1,1,Classroom
+BIF410,Graduation Project (1),2,2,0,Classroom
+BIF411,Structural Bioinformatics,3,1,1,Classroom
+BIF412,Management and Design of Health Care Systems,3,1,1,Classroom
+BIF413,Algorithms in Bioinformatics,3,1,1,Classroom
+BIF414,Genomics and Proteomics,3,1,1,Classroom
+BIF415,Genomic Bioinformatics,3,1,1,Classroom
+BIF416,Biological Sequence Analysis,3,1,1,Classroom
+BIF420,Graduation Project (2),4,2,0,Classroom
+BIF421,Telemedicine,3,1,1,Classroom
+BIF424,IT Infrastructure,3,1,1,Classroom
+BIF425,New Trends in Bioinformatics,3,1,1,Classroom
+BIO111,Fundamentals of life Science,3,1,1,Classroom
+CHM113,Chemistry (1),3,1,1,Classroom
+CNC111,Networks and Web Programming,3,1,1,Classroom
+CNC222,Introduction to Embedded Systems,3,1,1,Classroom
+CNC311,Computer Networks,3,1,1,Classroom
+CNC312,Foundations of Information Systems,3,1,1,Classroom
+CNC314,Database Systems,3,1,1,Classroom
+CNC320,IS Project Management,3,1,1,Classroom
+CNC321,Cryptography and Cryptanalysis,3,1,1,Classroom
+CNC322,Enterprise Architecture,3,1,1,Classroom
+CNC323,Computer and Network Security,3,1,1,Classroom
+CNC324,IT Infrastructure,3,1,1,Classroom
+CNC325,Wireless and Mobile Networks,3,1,1,Classroom
+CNC326,System Analysis and Design,3,1,1,Classroom
+CNC327,Internet of Things,3,1,1,Classroom
+CNC328,Geographic Information Systems (GIS),3,1,1,Classroom
+CNC329,Information Security Law,3,1,1,Classroom
+CNC410,IS Strategy,3,1,1,Classroom
+CNC411,Fundamentals of Cybersecurity,3,1,1,Classroom
+CNC412,IT Audit and Controls,3,1,1,Classroom
+CNC413,Digital Forensics,3,1,1,Classroom
+CNC414,Graduation Project (1),2,2,0,Classroom
+CNC415,Network Design and Management,3,1,1,Classroom
+CNC416,Cyber Warfare,3,1,1,Classroom
+CNC417,Forensics Management of Digital Evidence,3,1,1,Classroom
+CNC418,Software Security,3,1,1,Classroom
+CNC419,IT Security and Risk Management,3,1,1,Classroom
+CNC421,Ethical Hacking and Penetration Testing,3,1,1,Classroom
+CNC422,Cloud Computing and Virtualization,3,1,1,Classroom
+CNC424,Graduation Project (2),4,2,0,Classroom
+CSC111,Fundamentals of Programming,3,1,1,Classroom
+CSC112,Project Management,3,1,1,Classroom
+CSC113,Compiler Design,3,1,1,Classroom
+CSC114,Algorithms Analysis and Design,3,1,1,Classroom
+CSC121,Data Structures and Algorithms,3,1,1,Classroom
+CSC122,Advanced Programming,3,1,1,Classroom
+CSC211,Software Engineering,3,1,1,Classroom
+CSC221,Operating Systems,3,1,1,Classroom
+CSC314,Software Modeling and Analysis,3,1,1,Classroom
+CSC315,Seminar and Project-Based Learning on CSIT,3,1,1,Classroom
+CSC316,Understanding Computers,2,1,0,Classroom
+CSC317,Computer Graphics and Visualization,3,1,1,Classroom
+CSC321,Software Design,3,1,1,Classroom
+CSC322,Requirements Analysis and Specification,3,1,1,Classroom
+CSC323,Software Process,3,1,1,Classroom
+CSC324,Human Computer Interaction 3,3,1,1,Classroom
+CSC410,Software Quality,3,1,1,Classroom
+CSC411,Software Verification and Validation,3,1,1,Classroom
+CSC412,Software Security,3,1,1,Classroom
+CSC413,Graduation Project (1),2,2,0,Classroom
+CSC414,Game Design & Development,3,1,1,Classroom
+CSC415,New Trends in Computer Science,3,1,1,Classroom
+CSC416,New Trends in Game Design,3,1,1,Classroom
+CSC417,Software Maintenance & Evolution,3,1,1,Classroom
+CSC418,Mobile Software Engineering,3,1,1,Classroom
+CSC419,Strategy,3,1,1,Classroom
+CSC422,Fundamentals of Cloud Computing,3,1,1,Classroom
+CSC424,Graduation Project (2),4,2,0,Classroom
+CSC425,Soft Computing,3,1,1,Classroom
+CSC426,Distributed Systems,3,1,1,Classroom
+CSC427,Design Patterns,3,1,1,Classroom
+CSC428,Multimedia Communications,3,1,1,Classroom
+CSC429,Embedded Systems,3,1,1,Classroom
+CSE214,Computer Organization,3,1,1,Classroom
+CSE312,Discrete Mathematics,3,1,1,Classroom
+CSE423,Computer Graphics and Visualization,3,1,1,Classroom
+ECE111,Digital Logic Design,3,1,1,Classroom
+ECE213,Introduction to Electronics Engineering,3,1,1,Classroom
+ECE214,Digital Signal Processing,3,1,1,Classroom
+ECE223,Signal and Systems,3,1,1,Classroom
+ECE324,Digital Signal Processing,3,1,1,Classroom
+LRA101,Japanese Culture,2,1,0,Classroom
+LRA102,Introduction to Philosophy,2,1,0,Classroom
+LRA103,Fine Arts Appreciation-Drawing and Paintings,2,1,0,Classroom
+LRA104,Music and Technology,2,1,0,Classroom
+LRA105,Theater and Drama,2,1,0,Classroom
+LRA106,Physical Education,2,1,0,Classroom
+LRA107,Selected topics in Japanese arts,2,1,0,Classroom
+LRA108,Art and Architecture of Ancient Egypt,2,1,0,Classroom
+LRA109,Introduction to Cultural Anthropology,2,1,0,Classroom
+LRA110,Modern Egyptian History,2,1,0,Classroom
+LRA201,Introduction to Economics and Sustainable Development,2,1,0,Classroom
+LRA202,Peace studies,2,1,0,Classroom
+LRA203,Entrepreneurship and Innovation,2,1,0,Classroom
+LRA204,Public Policy,2,1,0,Classroom
+LRA205,Egyptian Business Regulations,2,1,0,Classroom
+LRA206,Sociology of work,2,1,0,Classroom
+LRA207,African and Middle Eastern studies,2,1,0,Classroom
+LRA208,Safety and Risk Management,2,1,0,Classroom
+LRA302,Introduction to Life Sciences,2,1,0,Classroom
+LRA303,Introduction to Environmental Biology,2,1,0,Classroom
+LRA304,Water and Politics in Africa and Middle East,2,1,0,Classroom
+LRA305,Astronomy,2,1,0,Classroom
+LRA306,Natural Resources and Sustainability,2,1,0,Classroom
+LRA401,Japanese Language (1),1,0,1,Classroom
+LRA402,Japanese Language (2),1,0,1,Classroom
+LRA403,Japanese Language (3),1,0,1,Classroom
+LRA404,Japanese Language (4),1,0,1,Classroom
+LRA405,Key Skills Seminar (1),2,1,0,Classroom
+LRA406,Key Skills Seminar (2),2,1,0,Classroom
+LRA407,English Language,2,1,0,Classroom
+LRA408,Arabic Language,2,1,0,Classroom
+LRA409,Research Methods,2,1,0,Classroom
+LRA410,Fundamentals of Communication,2,1,0,Classroom
+LRA411,Transformational Leadership,2,1,0,Classroom
+MTH111,Mathematics (1),3,1,1,Classroom
+MTH121,Mathematics (2),3,1,1,Classroom
+MTH212,Probability and Statistics,3,1,1,Classroom
+PHY113,Physics 1,3,1,1,Classroom
+PHY123,Physics 2,3,1,1,Classroom
