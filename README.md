@@ -4,56 +4,58 @@ A small Python project that builds timetables using constraint satisfaction tech
 
 ## Overview
 
-This project implements a timetable scheduler that assigns courses, instructors, rooms, and time slots using constraint solving (CSP) across two solver phases. It reads input CSVs from the `data/` folder and produces a final timetable CSV.
+This project implements a timetable scheduler that assigns courses, instructors, rooms, and time slots using a two-phase solver:
+- Phase 1: Backtracking CSP to find a feasible schedule.
+- Phase 2: Local search to improve solution quality.
 
-Key features:
-- Constraint-based scheduling (CSP)
-- Two-phase solver (phase1/phase2) to improve solution quality
-- Data-driven: CSV inputs for courses, instructors, rooms, and timeslots
+It reads input CSV/XLSX files from the `data/` folder and produces a final timetable CSV.
 
-## Repository structure
+## Quick start
 
-- `main.py` - entry point to run the scheduler
-- `requirements.txt` - Python dependencies
-- `csp/` - implementation of CSP domain, solvers, and utilities
-  - `domain.py`, `solver_phase1.py`, `solver_phase2.py`, `utils.py`
-- `data/` - input CSVs (Courses, Instructors, Rooms, TimeSlots, etc.)
-- `data_loader/` - code that loads CSVs into the app
-- `models/` - entities, session and data models
-- `output/` - export functionality for final timetables
-
-## Requirements
-
-- Python 3.8+ (recommended)
-- Install dependencies:
-
-```powershell
+1. Install dependencies:
+```sh
 pip install -r requirements.txt
 ```
 
-## How to run
+2. Ensure input files are present in `data/`:
+- Courses.csv, Instructors.csv, Rooms.csv, TimeSlots.csv, sections_data.xlsx, Avilable_Course.csv
 
-1. Prepare your input CSV files in the `data/` directory. Example files are already present (Courses.csv, Instructors.csv, Rooms.csv, TimeSlots.csv).
-2. Run the scheduler:
-
-```powershell
-cd D:\projects\timetable_scheduler
+3. Run the scheduler:
+```sh
 python main.py
 ```
 
-The program writes output to `data/final_timetable.csv` (or the configured output location).
+By default the app writes output to `final_timetable.csv` as configured in [main.py](main.py).
 
-## Notes on data files
+## Project structure
 
-- Large CSVs may be tracked via Git LFS in this repository. If you prefer not to store large datasets in the repository, add `data/` to `.gitignore` and provide instructions to obtain datasets separately.
+- [main.py](main.py) — entry point that wires components and runs both solver phases.
+- data_loader/loader.py — loads CSV/XLSX into model objects.
+- models/
+  - [models/session.py](models/session.py) — session model and variable generator (see [`models.session.VariableGenerator`](models/session.py)).
+  - [models/entities.py](models/entities.py) — domain entities (Course, Room, Instructor, TimeSlot, Section).
+- csp/
+  - [csp/domain.py](csp/domain.py) — domain generation and [`csp.domain.DomainBuilder`](csp/domain.py).
+  - [csp/solver_phase1.py](csp/solver_phase1.py) — backtracking solver and [`csp.solver_phase1.BacktrackingSolver`](csp/solver_phase1.py).
+  - [csp/solver_phase2.py](csp/solver_phase2.py) — cost evaluation and local search optimizer.
+- output/
+  - [output/export.py](output/export.py) — CSV export helper (see [`output.export.save_solution_to_csv`](output/export.py)).
+
+## Notes
+
+- Large CSVs may be tracked with Git LFS. See `.gitattributes`.
+- If input data changes, re-run `python main.py` to regenerate timetable.
+- The code is structured for clarity and ease of extension; adjust constraints or evaluator heuristics in `csp/` as needed.
 
 ## Contributing
 
-Feel free to open issues or pull requests. For changes to code, add tests where appropriate and follow standard Python packaging/style.
+1. Fork the repo
+2. Create a feature branch
+3. Add tests where appropriate
+4. Open a PR with a clear description
 
 ## License
 
-This repository does not include a license file yet. If you want a permissive license, consider adding an `LICENSE` with the MIT license.
+Add a LICENSE file if you want to choose a license (MIT recommended).
 
----
-Generated README for the timetable scheduler project.
+<!-- end of file -->
