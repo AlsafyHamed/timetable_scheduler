@@ -3,7 +3,7 @@ from models.session import VariableGenerator
 from csp.domain import DomainBuilder
 from csp.solver_phase1 import BacktrackingSolver
 from csp.solver_phase2 import CostEvaluator, IterativeSolver
-from output.export import save_solution_to_csv
+from output.export import save_solution_to_csv, save_solution_to_json
 
 FILE_PATHS = {
     "courses": "Data/Courses.csv",
@@ -15,6 +15,7 @@ FILE_PATHS = {
 }
 
 OUTPUT_FILE = "Data/final_timetable.csv"
+OUTPUT_JSON_FILE = "Data/timetable_data.json"
 
 if __name__ == "__main__":
     print("--- Running Data Loader ---")
@@ -46,4 +47,5 @@ if __name__ == "__main__":
                     iterations=20000
                 )
                 final_solution = optimizer.optimize()
+                save_solution_to_json(final_solution, model_data, OUTPUT_JSON_FILE)
                 save_solution_to_csv(final_solution, model_data, OUTPUT_FILE)
