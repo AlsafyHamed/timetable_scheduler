@@ -9,110 +9,144 @@ import time
 
 @dataclass
 class Assignment:
-    """Represents a single assignment of a session."""
     session: object
     timeslot_sequence: list
     room: object
     instructor: object
 
+    def __repr__(self):
+        return (f"Assignment(Session={self.session.session_id}, "
+                f"Course={self.session.course.course_id}, "
+                f"Time={self.timeslot_sequence}, Room={self.room.room_id}, "
+                f"Inst={self.instructor.instructor_id})")
+
 
 class TimetableState:
-    """Tracks current timetable assignments and ensures constraints."""
+    def __init__(self, model_data):
+        self.instructor_schedule = {inst.instructor_id: set() for inst in model_data['instructors'].values()}
+        self.room_schedule = {room.room_id: set() for room in model_data['rooms'].values()}
+        self.section_schedule = {sec.section_id: set() for sec in model_data['sections'].values()}
 
-    def __init__(self):
-        self.assignments = []
-        self.instructor_usage = {}
-        self.room_usage = {}
-        self.section_usage = {}
-
-    def is_consistent(self, session, timeslot_seq, room, instructor):
-        """Check for constraint conflicts before assignment."""
-
-        # Instructor conflict
-        for slot in timeslot_seq:
-            if (instructor.instructor_id, slot) in self.instructor_usage:
-                return False
-
-        # Room conflict
-        for slot in timeslot_seq:
-            if (room.room_id, slot) in self.room_usage:
-                return False
-
-        # Section conflict
-        for section in session.sections:
-            for slot in timeslot_seq:
-                if (section.section_id, slot) in self.section_usage:
+    def is_consistent(self, session, timeslot_sequence, room, instructor):
+        try:
+            for slot_id in timeslot_sequence:
+                if (slot_id in self.instructor_schedule[instructor.instructor_id] or
+                    slot_id in self.room_schedule[room.room_id]):
                     return False
+                for section in session.sections:
+                    if slot_id in self.section_schedule[section.section_id]:
+                        return False
+            return True
+        except KeyError as e:
+            print(f"--- CRITICAL ERROR in TimetableState.is_consistent: {e} ---")
+            return False
 
-        return True
+    def add_assignment(self, assignment):
+        for slot_id in assignment.timeslot_sequence:
+            self.instructor_schedule[assignment.instructor.instructor_id].add(slot_id)
+            self.room_schedule[assignment.room.room_id].add(slot_id)
+            for section in assignment.session.sections:
+                self.section_schedule[section.section_id].add(slot_id)
 
-    def add_assignment(self, session, timeslot_seq, room, instructor):
-        """Add a valid assignment to state."""
-        assignment = Assignment(session, timeslot_seq, room, instructor)
-        self.assignments.append(assignment)
-
-        for slot in timeslot_seq:
-            self.instructor_usage[(instructor.instructor_id, slot)] = True
-            self.room_usage[(room.room_id, slot)] = True
-            for section in session.sections:
-                self.section_usage[(section.section_id, slot)] = True
-
-    def remove_assignment(self, session, timeslot_seq, room, instructor):
-        """Undo assignment (for backtracking)."""
-        self.assignments = [a for a in self.assignments if a.session != session]
-
-        for slot in timeslot_seq:
-            self.instructor_usage.pop((instructor.instructor_id, slot), None)
-            self.room_usage.pop((room.room_id, slot), None)
-            for section in session.sections:
-                self.section_usage.pop((section.section_id, slot), None)
+    def remove_assignment(self, assignment):
+        for slot_id in assignment.timeslot_sequence:
+            self.instructor_schedule[assignment.instructor.instructor_id].remove(slot_id)
+            self.room_schedule[assignment.room.room_id].remove(slot_id)
+            for section in assignment.session.sections:
+                self.section_schedule[section.section_id].remove(slot_id)
 
 
 class BacktrackingSolver:
-    """Backtracking CSP Solver to find a feasible initial timetable."""
-
     def __init__(self, variables, model_data):
-        self.variables = variables
-        self.model_data = model_data
-        self.best_solution = None
-        self.best_state = None
-        self.start_time = None
+        self.unassigned_variables = list(variables)
+        self.state = TimetableState(model_data)
+        self.solution = []
+        self.model_data = model_data  # Save for LCV
 
     def solve(self):
-        print("\n[Phase 1] Starting Backtracking Search...")
-        self.start_time = time.time()
-        state = TimetableState()
-        success = self._backtrack(state, 0)
-        duration = time.time() - self.start_time
+        print("\n--- Phase 1: Backtracking Solver Starting ---")
+        start_time = time.time()
 
-        if success:
-            print(f"[Phase 1] Solution found in {duration:.2f} seconds ✅")
-            return self.best_solution, self.best_state
+        self.unassigned_variables.sort(key=self.get_domain_size)
+
+        solution_found = self.recursive_solve()
+
+        end_time = time.time()
+        print(f"--- Solver Finished in {end_time - start_time:.2f} seconds ---")
+
+        if solution_found:
+            print(f"SUCCESS: Found a valid timetable with {len(self.solution)} assignments.")
+            # We also need to return the final state for Phase 2
+            return self.solution, self.state
         else:
-            print(f"[Phase 1] No valid timetable found after {duration:.2f} seconds ❌")
+            print("FAILURE: Could not find a valid solution.")
             return None, None
 
-    def _backtrack(self, state, index):
-        """Recursive backtracking search with constraint checking."""
-        if index == len(self.variables):
-            self.best_solution = list(state.assignments)
-            self.best_state = state
+    def get_domain_size(self, var):
+        d = var.domain
+        return len(d.timeslot_sequences) * len(d.rooms) * len(d.instructors)
+
+    def select_variable_mrv(self):
+        # A more dynamic MRV: re-sort the list and pick the best one
+        # This is slower but more accurate
+        self.unassigned_variables.sort(key=self.get_domain_size)
+        return self.unassigned_variables.pop(0)
+
+    def get_ordered_domain_values(self, var):
+        """
+        Generates all (time, room, inst) combinations.
+        We will now also sort them based on our LCV / Soft Constraints!
+        """
+        all_combinations = []
+        for time_seq in var.domain.timeslot_sequences:
+            for room in var.domain.rooms:
+                for inst in var.domain.instructors:
+                    all_combinations.append((time_seq, room, inst))
+
+        # --- LCV / Soft Constraint Heuristic ---
+        # We calculate a "penalty" for each choice.
+        # Choices with LOWER penalty are tried FIRST.
+        def calculate_penalty(value_tuple):
+            time_seq, room, inst = value_tuple
+            penalty = 0
+
+            # 1. Penalty for Not Preferred Slot
+            for slot_id in time_seq:
+                if slot_id in inst.not_preferred_slots:
+                    penalty += 10  # High penalty
+
+            # 2. Penalty for Not Preferred Instructor
+            if inst.instructor_id not in var.preferred_instructors and var.preferred_instructors:
+                penalty += 5  # Medium penalty
+
+            # 3. Reward for Preferred Instructor (negative penalty)
+            if inst.instructor_id in var.preferred_instructors:
+                penalty -= 20  # Strong reward
+
+            return penalty
+
+        # Sort combinations: lowest penalty score first
+        all_combinations.sort(key=calculate_penalty)
+        return all_combinations
+
+    def recursive_solve(self):
+        if not self.unassigned_variables:
             return True
 
-        session = self.variables[index]
-        domain = session.domain
+        # Use simple pop(0) after initial sort for speed
+        var = self.unassigned_variables.pop(0)
 
-        # Try each possible combination in domain
-        for instructor in domain.instructors:
-            for room in domain.rooms:
-                for timeslot_seq in domain.timeslot_sequences:
-                    if state.is_consistent(session, timeslot_seq, room, instructor):
-                        state.add_assignment(session, timeslot_seq, room, instructor)
+        for time_seq, room, inst in self.get_ordered_domain_values(var):
+            if self.state.is_consistent(var, time_seq, room, inst):
+                assignment = Assignment(var, time_seq, room, inst)
+                self.state.add_assignment(assignment)
+                self.solution.append(assignment)
 
-                        if self._backtrack(state, index + 1):
-                            return True
+                if self.recursive_solve():
+                    return True
 
-                        # Backtrack
-                        state.remove_assignment(session, timeslot_seq, room, instructor)
+                self.solution.pop()
+                self.state.remove_assignment(assignment)
 
+        self.unassigned_variables.insert(0, var)
         return False

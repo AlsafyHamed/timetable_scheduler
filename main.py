@@ -6,15 +6,15 @@ from csp.solver_phase2 import CostEvaluator, IterativeSolver
 from output.export import save_solution_to_csv
 
 FILE_PATHS = {
-    "courses": "data/Courses.csv",
-    "rooms": "data/Rooms.csv",
-    "instructors": "data/Instructors.csv",
-    "timeslots": "data/TimeSlots.csv",
-    "sections": "data/sections_data.xlsx",
-    "available_courses": "data/Avilable_Course.csv"
+    "courses": "Data/Courses.csv",
+    "rooms": "Data/Rooms.csv",
+    "instructors": "Data/Instructors.csv",
+    "timeslots": "Data/TimeSlots.csv",
+    "sections": "Data/sections_data.xlsx",
+    "available_courses": "Data/Avilable_Course.csv"
 }
 
-OUTPUT_FILE = "final_timetable.csv"
+OUTPUT_FILE = "Data/final_timetable.csv"
 
 if __name__ == "__main__":
     print("--- Running Data Loader ---")

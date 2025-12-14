@@ -1,0 +1,91 @@
+InstructorID,Name,Role,QualifiedCourses,Not_PreferredSlots
+P01,Dr. Adel Fathy,Professor,"PHY113, PHY123","[3, 10, 18, 5, 7, 14]"
+P02,Prof. Adel Al-senn,Professor,LRA201,"[15, 11, 18, 17, 2, 10]"
+P03,Dr. Aisha Khan,Professor,LRA104,"[3, 20, 10, 13, 4, 7]"
+P04,Dr. Ahmed Abdel-Malk,Professor,"ECE324, ACM215, CNC325","[20, 4, 18, 17, 1, 6]"
+P05,Dr. Ahmed Anter,Professor,"AID311, CNC111, SPS315","[20, 16, 1, 12, 2, 3]"
+P06,Dr. Ahmed Arafa,Professor,"AID413, AID427, CSC211, CSC221, CNC411","[12, 13, 3, 14, 16, 8]"
+P07,Dr. Ahmed Bayumi,Professor,"AID312, AID412, AID422, AID428, BIF327, CSC415","[20, 16, 2, 19, 18, 6]"
+P08,Prof. Ahmed Allam,Professor,ECE111,"[1, 19, 9, 11, 10, 20]"
+P09,Prof. Ahmed Othman,Professor,BIF425,"[12, 13, 9, 3, 4, 19]"
+P10,Dr. Ali Kandil,Professor,MTH121,"[8, 11, 5, 4, 2, 3]"
+P11,Dr. Amal Gomaa,Professor,LRA410,"[3, 2, 10, 5, 20, 1]"
+P12,Dr. Arafa,Professor,"CNC320, CNC321, CSC321","[20, 2, 6, 11, 16, 9]"
+P13,Dr. Asmaa,Professor,"CNC413, CSC412","[5, 12, 18, 10, 8, 1]"
+P14,Dr. Ayman Arafa,Professor,"MTH111, ACM215, MTH212, MTH121","[9, 3, 11, 6, 10, 1]"
+P15,Dr. Y,Professor,"BIF410, BIF420",[1]
+P16,Dr. Y,Professor,"CSC413, CSC424",[5]
+P17,Prof. Fatima Zahra,Professor,LRA208,"[8, 12, 16, 15, 6, 10]"
+P18,Prof. gehad G. Mohamed,Professor,"CHM113, BIO111","[5, 4, 18, 13, 16, 9]"
+P19,Dr. Hataba,Professor,"CNC418, CNC419, CSC317","[10, 20, 3, 7, 4, 15]"
+P20,Prof. Haruki Ito,Professor,"LRA403, LRA404","[5, 10, 17, 18, 19, 14]"
+P21,Prof. Kenji Tanaka,Professor,LRA401,"[7, 11, 4, 8, 9, 15]"
+P22,Dr. Maali Fouad,Professor,LRA405,"[15, 5, 9, 10, 8, 18]"
+P23,Prof. Marghany Hassan,Professor,"AID321, AID411, BIF413, CSC114, CSE312, CSC322","[9, 16, 5, 18, 4, 11]"
+P24,Dr.Mohamad Ayad,Professor,CHM113,"[6, 16, 5, 12, 11, 8]"
+P25,Dr. Mohamed El-khateeb,Professor,LRA203,"[15, 6, 3, 7, 5, 8]"
+P26,Prof. Mohamed Hassan,Professor,LRA409,"[4, 17, 10, 3, 20, 11]"
+P27,Dr. Mohamed Issa,Professor,"AID417, BIF321, BIF323, BIF328, BIF413, BIF425, CNC314, CSC122","[1, 10, 8, 20, 2, 3]"
+P28,Dr. Mohamed Khames,Professor,"AID323, AID421, CSC324, CSC410, CSC411, CSC425, CSC427, CNC324, BIF424","[19, 6, 8, 2, 3, 9]"
+P29,Dr. Mostafa Mohamed,Professor,"AID322, AID325, CSC114, CSC415","[10, 1, 20, 4, 14, 9]"
+P30,Prof. Mostafa Soliman,Professor,"CSE214, CSC115, CSC315, CNC222, CNC223, CSC429","[20, 3, 9, 8, 13, 6]"
+P31,Dr. Moustafa Mahmoud,Professor,"CNC415, CNC418, CNC419, CNC422, CSC121, CSC323, CSC414","[6, 10, 13, 20, 9, 16]"
+P32,Dr. Mustafa AlSayed,Professor,"CSC314, CSC412, CSC414, CSC426, CNC415","[4, 16, 13, 12, 6, 7]"
+P33,Dr. Omar Sharif,Professor,LRA105,"[16, 17, 13, 14, 8, 1]"
+P34,Prof. LBA,Professor,LRA306,"[8, 9, 13, 17, 20, 5]"
+P35,Dr. Reda Elbasiony ,Professor,"AID426, CSC111, CNC111, CNC312, CSC317, CSC422","[11, 5, 6, 7, 12, 4]"
+P36,Prof. Said Sadik,Professor,LRA206,"[14, 2, 13, 7, 3, 15]"
+P37,Dr. Samir,Professor,"AID413, CNC323, CNC324, CNC327","[17, 15, 12, 13, 20, 9]"
+P38,Prof. Samir Ahmed,Professor,"CNC311, CNC413","[20, 7, 12, 13, 1, 6]"
+P39,Dr. Sameh Sherif,Professor,"BIF312, BIF322, ECE111, BIF411, BIF412, BIF421","[12, 19, 15, 7, 11, 6]"
+P40,Dr. Sherine Elmotasem,Professor,LRA101,"[2, 8, 14, 1, 19, 5]"
+P41,Dr.Y,Professor,"AID414, AID424",[11]
+P42,Dr.Y,Professor,"CNC414, CNC424",[15]
+P43,Dr. Yassen,Professor,"AID324, CNC421","[11, 6, 1, 15, 2, 20]"
+P44,Prof. BAS,Professor,"BIF311, BIF325, ACM323","[10, 11, 2, 17, 3, 6]"
+A01,BAS Department Staff,Assistant,"BIF325, MTH111, PHY113, ACM215, MTH212",[]
+A02,ECE Department Staff,Assistant,"ECE111, ECE324, ECE223, ECE214, ECE213",[]
+A03,Eng. Alaa Essam,Assistant,"AID421, BIF323, AID416, CNC111, CNC312",[]
+A04,Eng. Ahmed Hassan,Assistant,"BIO111, CHM113, MTH121, PHY123, MTH121",[]
+A05,Eng. Bassant Tolba,Assistant,"CNC325, ACM422, PHY123, ACM323, CNC422",[]
+A06,Eng. Fatima Ali,Assistant,"PHY113, AID427, AID428, AID326, AID327",[]
+A07,Eng. Fatma Elsayed,Assistant,"AID417, BIF328, CNC311, CNC321, CSC122",[]
+A08,Eng. Heba Abdelkader,Assistant,"AID412, AID422, BIF327, CSE214, CNC111",[]
+A09,Eng. Maria Mounir,Assistant,"CSC221, CSC425, CNC323, AID425, CSC221",[]
+A10,Eng. Mariam Ismael,Assistant,"BIF321, BIF322, CSC111, CNC411, CSC121",[]
+A11,Eng. Menna Hamdi,Assistant,"AID323, AID426, CSC324, CSC422, CSE312",[]
+A12,Eng. Menna Mahmoud,Assistant,"AID422, CNC327, AID311, CSC211, CSC317",[]
+A13,Eng. Nada Ahmed,Assistant,"AID325, CSC211, CSC317, CSC422, AID413",[]
+A14,Eng. Nada Essam,Assistant,"AID325, AID411, BIF425, CSC111, CSC121",[]
+A15,Eng. Nada Hamdy,Assistant,"BIF421, CSC111, CNC311, CNC422, CSE321",[]
+A16,Eng. Nourhan Waleed,Assistant,"AID312, CNC314, CNC324, CSC121, CNC421",[]
+A17,Eng. Omnya Ramadan,Assistant,"CSE214, CSC115, CSC315, CNC222, AID328",[]
+A18,Eng. Rana Mohamed,Assistant,"AID324, CNC223, AID423, CSC122, CSC122",[]
+A19,Eng. Saeed Mostafa,Assistant,"AID421, CSC221, CSC427, CNC320, CSC112",[]
+A20,Eng. Salma Alashry,Assistant,"AID321, AID322, CNC314, CSC114, CSC122",[]
+A21,Eng. Salma Waleed,Assistant,"AID311, AID312, CSC317, CSC323, CNC421",[]
+A22,Eng. Omar Ahmed,Assistant,"CSC113, CSC114, CSE423, AID111, CSC321",[]
+A23,Eng. Layla Ibrahim,Assistant,"AID221, CSC322, BIF411",[]
+A24,Eng. Yousef Ali,Assistant,"CSC113, CSE423, CSC314",[]
+A25,Eng. Hana Adel,Assistant,"AID111, AID221, BIF311, BIF413",[]
+A26,Eng. Zayd Tarek,Assistant,"ECE214, ECE213, BIF412, BIF424",[]
+A28,Eng. Omar Hassan,Assistant,"AID311, AID312, AID321, AID322, AID323",[]
+A29,Eng. Fatima Ali,Assistant,"AID324, AID325, AID411, AID412, AID417",[]
+A30,Eng. Ali Ibrahim,Assistant,"AID421, AID422, AID426, BIF321, BIF322",[]
+A31,Eng. Layla Adel,Assistant,"BIF323, BIF325, BIF327, BIF328, BIF421",[]
+A32,Eng. Yousef Said,Assistant,"BIF425, BIO111, CHM113, CNC111, CNC222",[]
+A33,Eng. Hana Tarek,Assistant,"CNC223, CNC311, CNC312, CNC314, CNC320",[]
+A34,Eng. Zayd Ahmed,Assistant,"CNC321, CNC323, CNC324, CNC325, CNC327",[]
+A35,Eng. Maryam Essam,Assistant,"CNC411, CNC421, CNC422, CSC111, CSC114",[]
+A36,Eng. Adam Mohamed,Assistant,"CSC115, CSC121, CSC122, CSC211, CSC221",[]
+A37,Eng. Nora Gamal,Assistant,"CSC315, CSC317, CSC321, CSC322, CSC323",[]
+A38,Prof. Yumi Sato,Assistant,"LRA401,LRA403",[]
+A39,Prof. Ahmed Hassan,Assistant,"LRA402,LRA404",[]
+A40,Prof. Lina Morales,Assistant,"LRA401,LRA403,LRA402",[]
+A41,Eng. Omar Hassan,Assistant,"CNC413, CNC414, CNC415, CNC418, CNC419",[]
+A42,Eng. Fatima Ali,Assistant,"CSC410, CSC411, CSC412, CSC413, CSC414, CSC415, CSC426",[]
+A43,Eng. Ali Sato,Assistant,"AID421, ACM215",[]
+A44,Eng. Layla Zayd,Assistant,"BIF323, ACM215",[]
+A45,Eng. Yousef Said,Assistant,"BIF425, ACM215",[]
+A46,Eng. Hana Yousef,Assistant,"CNC223, CNC311, CNC312, CNC314, CNC320",[]
+A47,Eng. Zayd Waleed,Assistant,"CNC321, CNC323, CNC324, CNC325, CNC327",[]
