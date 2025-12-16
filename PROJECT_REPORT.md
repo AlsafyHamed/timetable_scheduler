@@ -159,18 +159,18 @@ To solve the complex university timetabling problem by:
 ## 3. Key Features & Algorithms
 
 ### Hard Constraints (Must be satisfied)
-✓ No instructor teaches two courses simultaneously  
-✓ No room is double-booked  
-✓ No student section has schedule conflicts  
-✓ Instructors only teach courses they are qualified for  
-✓ Rooms accommodate section size (capacity ≥ student count)  
-✓ Consecutive time slots exist for multi-slot sessions  
+✓ No instructor teaches two courses simultaneously
+✓ No room is double-booked
+✓ No student section has schedule conflicts
+✓ Instructors only teach courses they are qualified for
+✓ Rooms accommodate section size (capacity ≥ student count)
+✓ Consecutive time slots exist for multi-slot sessions
 
 ### Soft Constraints (Minimized)
-→ Prefer instructors' available time slots  
-→ Minimize schedule gaps in instructor calendars  
-→ Avoid very early morning classes  
-→ Keep multi-slot sessions in consecutive slots  
+→ Prefer instructors' available time slots
+→ Minimize schedule gaps in instructor calendars
+→ Avoid very early morning classes
+→ Keep multi-slot sessions in consecutive slots
 
 ### Algorithms Implemented
 
@@ -304,13 +304,13 @@ Edit [main.py](main.py) to modify:
 
 ## 7. Strengths & Advantages
 
-✅ **Automated Solution**: Eliminates manual timetable creation effort  
-✅ **Constraint Flexibility**: Easily configurable soft constraints  
-✅ **Quality Optimization**: Two-phase approach balances feasibility and optimality  
-✅ **Clear Architecture**: Well-organized, extensible codebase  
-✅ **Multiple Output Formats**: CSV and JSON exports for different use cases  
-✅ **Detailed Modeling**: Accounts for lecture/lab splits and group capacity  
-✅ **Preference Satisfaction**: Optimizes instructor and room preferences  
+✅ **Automated Solution**: Eliminates manual timetable creation effort
+✅ **Constraint Flexibility**: Easily configurable soft constraints
+✅ **Quality Optimization**: Two-phase approach balances feasibility and optimality
+✅ **Clear Architecture**: Well-organized, extensible codebase
+✅ **Multiple Output Formats**: CSV and JSON exports for different use cases
+✅ **Detailed Modeling**: Accounts for lecture/lab splits and group capacity
+✅ **Preference Satisfaction**: Optimizes instructor and room preferences
 
 ---
 
@@ -404,5 +404,5 @@ The two-phase approach ensures both **feasibility** (Phase 1) and **quality** (P
 
 ---
 
-**Report Generated**: December 15, 2025  
+**Report Generated**: December 15, 2025
 **Project Status**: Production-ready with opportunities for enhancement
